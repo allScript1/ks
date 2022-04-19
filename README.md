@@ -1,3 +1,14 @@
+
+
+【脚本文件免责声明】：
+---脚本文件只用于兴趣交流
+---脚本文件任何人不得用于商业以及非法用途
+---脚本文件下载试用后24小时内自行删除
+---因使用脚本文件造成使用者以及任何网站平台的一切损失皆由使用者承担
+---脚本文件如有不慎被破解或修改皆有破解或修改者承担
+---如不接受此条款请立即删除脚本文件
+
+
 ## 特别声明:
 
 -   本仓库发布的所有script均收集于网络，仅供个人学习，
@@ -26,5 +37,41 @@
 qq群 681030097
 
 维护收集不易，大部分内容收集于网络，感谢GitHub提供开源学习平台
+
+
+
+
+
+
+
+### 定制拉库
+```
+ql repo https://github001.zhimox42.workers.dev/https://github.com/qtest3/ql_all.git "auto"
+```
+
+
+
+
+### 通用拉库
+```
+ql repo https://github.com/qtest3/ql_all.git "" "Backup|index|HT.*|sendNotify|ql" "HT.*|sendNotify|ql"
+```
+
+
+### 国内备用
+
+```
+ql repo https://hub.fastgit.org/qtest3/ql_all.git "" "Backup|index|HT.*|sendNotify|ql" "HT.*|sendNotify|ql"
+```
+
+### 定时
+
+```
+0 0 10,15 * * *
+``` 
+
+
+
+
 
 

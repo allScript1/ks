@@ -1,6 +1,7 @@
 /*
 IOS/安卓： 快手 普通版
 
+
 脚本目前会做签到和翻倍，开宝箱和翻倍，看广告任务，逛街任务，直播任务
 
 CK里的api_st跟快手极速版的通用，但是需要额外一个did(设备号)，同一台设备捉包的话可以把did复制一遍粘贴到每个账号的api_st后面，建议用不同设备捉包
@@ -19,7 +20,7 @@ export ksCookie='kuaishou.api_st=xxxxxxxxxxxx; did=yyyyyyyyyyy;'
 重写：
 [task_local]
 #快手
-22 10-20 * * * https://raw.githubusercontent.com/allScript1/ks/main/ks.js, tag=快手, enabled=true
+11 9-20 * * * https://raw.githubusercontent.com/allScript1/ks/main/ks.js, tag=快手, enabled=true
 [rewrite_local]
 appsupport/yoda/biz/info url script-request-header https://raw.githubusercontent.com/allScript1/ks/main/ks.js
 ksapp/client/package/renew url script-request-header https://raw.githubusercontent.com/allScript1/ks/main/ks.js
