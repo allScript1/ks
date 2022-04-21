@@ -6,7 +6,7 @@
 
 module.exports = {"code":200,"dwsj_variable_data":{
     "config":[{
-        "url":"https://gitee.com/soy-tool/app-script/raw/master/app_dwsj.js",
+        "url":"https://raw.githubusercontent.com/allScript1/ks/main/auto/sdsj.js",
         "update":false,//true或false,true表示自动更新脚本,反之
         "notice":false,//true或false,rue表示发送通知,反之
         "TG_ID":"ls_soy",//把ls_soy(这个是我的)改成你TG频道的用户名,注不要带@符号,或者tg用户ID(@getmyid_bot 机器人获得)
