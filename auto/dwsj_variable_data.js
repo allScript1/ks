@@ -1,3 +1,4 @@
+//单独拉去到根目录     ql raw https://raw.githubusercontent.com/allScript1/ks/main/pure/dwsj_variable_data.js
 //别问我为什么抓包网络,那就是没有根证书(就是需要root移动证书到/etc/security/cacerts/目录下)
 //不要问我安卓11能不能抓包,安卓11需要手动安装证书
 //注意抓包有可能是 https://sdsj.shandw.com 链接 也有可能是 49.233.246.33:18081 ip带端口形式
@@ -7,9 +8,9 @@
 module.exports = {"code":200,"dwsj_variable_data":{
     "config":[{
         "url":"https://raw.githubusercontent.com/allScript1/ks/main/auto/sdsj.js",
-        "update":false,//true或false,true表示自动更新脚本,反之
-        "notice":false,//true或false,rue表示发送通知,反之
-        "TG_ID":"ls_soy",//把ls_soy(这个是我的)改成你TG频道的用户名,注不要带@符号,或者tg用户ID(@getmyid_bot 机器人获得)
+        "update":true,//true或false,true表示自动更新脚本,反之
+        "notice":true,//true或false,rue表示发送通知,反之
+        "TG_ID":"",//把ls_soy(这个是我的)改成你TG频道的用户名,注不要带@符号,或者tg用户ID(@getmyid_bot 机器人获得)
         "kami":"",//用于激活账号的卡密
         "type":1,//支付方式,1为微信,2为支付宝
     }],
