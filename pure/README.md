@@ -44,16 +44,20 @@ qq群 681030097
 
 
 
-### 拉库
+### pure拉库
+
 ```
-ql repo https://github.com/allScript1/ks.git "auto"
+ql repo https://github.com/allScript1/ks.git "pure"
 ```
+
+
+
 
 
 ### 备用
 
 ```
-ql repo https://github001.zhimox42.workers.dev/https://github.com/allScript1/ks.git "auto"
+ql repo https://github001.zhimox42.workers.dev/https://github.com/allScript1/ks.git "pure"
 ```
 
 ### 定时
