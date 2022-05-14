@@ -7,7 +7,7 @@ qq群 681030097
 =================================Quantumultx=========================
 [task_local]
 #快手极速版- 一分领好货
-0 0 0,10,16,22 * * * https://github.com/allScript1/ks/master/ks/ksjsb_yflhh.js, tag=快手极速版- 一分领好货, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+0 0 0,10,16,22 * * * https://github.com/allScript1/ks/master/ks/ksjsb_yflhh.js, tag=快手极速版- 一分领好货, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 =================================Loon===================================
 [Script]
 cron "0 0 0,10,16,22 * * *" script-path=https://github.com/allScript1/ks/master/ks/ksjsb_yflhh.js,tag=快手极速版- 一分领好货

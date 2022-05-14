@@ -67,5 +67,7 @@ ql repo https://github001.zhimox42.workers.dev/https://github.com/allScript1/ks.
 
 
 
-https://raw.githubusercontent.com/allScript1/ks/main/auto/ks.json
-https://raw.githubusercontent.com/allScript1/ks/main/auto/ksjsbjk.json
+https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/ks.json
+https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/ksjsbjk.json
+
+http://127.0.0.1:50600/ksjsbjk.json

@@ -7,7 +7,7 @@ qq群 681030097
 =================================Quantumultx=========================
 [task_local]
 #快手极速版-提现100元
-0 10 * * * * https://github.com/allScript1/ks/master/ks/ksjsb_100.js, tag=快手极速版-提现100元, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+0 10 * * * * https://github.com/allScript1/ks/master/ks/ksjsb_100.js, tag=快手极速版-提现100元, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 =================================Loon===================================
 [Script]
 cron "0 10 * * * *" script-path=https://github.com/allScript1/ks/master/ks/ksjsb_100.js,tag=快手极速版-提现100元

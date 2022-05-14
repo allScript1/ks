@@ -8,8 +8,8 @@
 
 cron 0-59/5 0-23 * * *
 
-脚本地址:https://raw.githubusercontent.com/allScript1/ks/main/auto/sdsj.js
-变量配置文件地址:https://raw.githubusercontent.com/allScript1/ks/main/auto/dwsj_variable_data.js
+脚本地址:https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/sdsj.js
+变量配置文件地址:https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/dwsj_variable_data.js
 
 注意:
 

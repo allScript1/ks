@@ -19,10 +19,10 @@ kuaishou.api_st=yyyyyyyyy;'
 重写：
 [task_local]
 #快手极速版
-11 9-22 * * * https://raw.githubusercontent.com/allScript1/ks/main/ksjsb.js, tag=快手极速版, enabled=true
+11 9-22 * * * https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/ksjsb.js, tag=快手极速版, enabled=true
 [rewrite_local]
-appsupport/yoda/biz/info url script-request-header https://raw.githubusercontent.com/allScript1/ks/main/ksjsb.js
-ksapp/client/package/renew url script-request-header https://raw.githubusercontent.com/allScript1/ks/main/ksjsb.js
+appsupport/yoda/biz/info url script-request-header https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/ksjsb.js
+ksapp/client/package/renew url script-request-header https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/ksjsb.js
 [MITM]
 #IOS用第一个，安卓用第二个
 hostname = api.kuaisho*.com

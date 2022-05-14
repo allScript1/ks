@@ -4,7 +4,7 @@
 =================================Quantumultx=========================
 [task_local]
 #快手CK转换-ksjsbCookie转换ksCookie
-0 55 7 * * * https://github.com/allScript1/ks/master/ks/kspt_generate.js, tag=快手CK转换-ksjsbCookie转换ksCookie, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+0 55 7 * * * https://github.com/allScript1/ks/master/ks/kspt_generate.js, tag=快手CK转换-ksjsbCookie转换ksCookie, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 =================================Loon===================================
 [Script]
 cron "0 55 7 * * *" script-path=https://github.com/allScript1/ks/master/ks/kspt_generate.js,tag=快手CK转换-ksjsbCookie转换ksCookie

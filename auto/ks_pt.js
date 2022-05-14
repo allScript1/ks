@@ -20,10 +20,10 @@ export ksCookie='kuaishou.api_st=xxxxxxxxxxxx; did=yyyyyyyyyyy;'
 重写：
 [task_local]
 #快手
-11 9-20 * * * https://raw.githubusercontent.com/allScript1/ks/main/ks.js, tag=快手, enabled=true
+11 9-20 * * * https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/ks.js, tag=快手, enabled=true
 [rewrite_local]
-appsupport/yoda/biz/info url script-request-header https://raw.githubusercontent.com/allScript1/ks/main/ks.js
-ksapp/client/package/renew url script-request-header https://raw.githubusercontent.com/allScript1/ks/main/ks.js
+appsupport/yoda/biz/info url script-request-header https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/ks.js
+ksapp/client/package/renew url script-request-header https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/ks.js
 [MITM]
 hostname = api.kuaisho*.com
 hostname = open.kuaisho*.com
