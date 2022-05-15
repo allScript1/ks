@@ -101,8 +101,8 @@ function fhxzck() {
 function qswcdl(timeout = 0) {
   return new Promise((resolve) => {
     let url = {
-      // url: 'https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/code.json',
-      url:'./code.json'
+      url: 'https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/code.json',
+      // url:'./code.json'
       headers: ``,
     }
     $.get(url, async (err, resp, data) => {

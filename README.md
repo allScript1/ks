@@ -44,7 +44,7 @@ qq群 681030097
 
 ### 05拉库
 ```
-ql repo https://github.com/allScript1/ks.git "05"
+ql repo https://github.com/allScript1/ks.git "202205"
 ```
 
 

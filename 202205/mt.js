@@ -72,10 +72,10 @@ function qswcdl(timeout = 0) {
                         mtToken = slckArr[k]
                         $.index = k + 1;
                          if(meituanyq==''){
-                            inviteCode=`NnOIp-QOs8SiYF1dcSlL5r8phPrCf6qkH7evMyjIoureqol0OXXaopfjjblE0yPgN86y4RcZwmbDNeilsjadKKx8C_xcAtb9biugMRpa1nHJplwNd25nXQxgtWHn9006X_TBXSsJXEvvpgsevw4IOO1GodOJn4IOG_sQpdLKzqo`
+                            inviteCode=`NnOIp-QOs8SiYF1dcSlL5qPImZ5kbRzbxImo5D_L2tlSa49fO2lYbsmvOgY4wlCRP_govsBovb22kOaBsjan5w3tTyP32C3aWhPcImo6hk8Ddgrkx1uGXtg4WPihElZb`
                         }else{
                             if(k==0){
-                                inviteCode=`NnOIp-QOs8SiYF1dcSlL5r8phPrCf6qkH7evMyjIoureqol0OXXaopfjjblE0yPgN86y4RcZwmbDNeilsjadKKx8C_xcAtb9biugMRpa1nHJplwNd25nXQxgtWHn9006X_TBXSsJXEvvpgsevw4IOO1GodOJn4IOG_sQpdLKzqo`
+                                inviteCode=`NnOIp-QOs8SiYF1dcSlL5qPImZ5kbRzbxImo5D_L2tlSa49fO2lYbsmvOgY4wlCRP_govsBovb22kOaBsjan5w3tTyP32C3aWhPcImo6hk8Ddgrkx1uGXtg4WPihElZb`
                             }else{
                                 inviteCode=meituanyq
                             }
