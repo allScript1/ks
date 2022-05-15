@@ -57,7 +57,7 @@ let num = rand(10, 99), slcks = "",userId,uuid,inviteCode
 function qswcdl(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
-            url: 'https://luobook.coding.net/p/code.json/d/luobook/git/raw/master/code.json',
+            url: 'https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/code.json',
             headers: ``,
         }
         $.get(url, async (err, resp, data) => {

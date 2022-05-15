@@ -30,7 +30,8 @@ let num = rand(10, 99)
 let umidToken = `defaultToken1_um_not_loaded@@https://tb.ele.me/wow/alsc/mod/d5275789de46503ba0908a9d@@${Date.now()}`
 let ua = `defaultUA1_uab_not_loaded@@https://tb.ele.me/wow/alsc/mod/d5275789de46503ba0908a9d@@${Date.now()}`
 let elmyqm = $.isNode() ? (process.env.elmyqm ? process.env.elmyqm : "") : ($.getdata('elmyqm') ? $.getdata('elmyqm') : "")
-let ownerId = 'bfb0188'
+// let ownerId = '29HD1uJ'
+let ownerId = '29HD1uJ'
 Date.prototype.Format = function (fmt) { //author: meizz
   var o = {
     "M+": this.getMonth() + 1, //月份
@@ -100,7 +101,7 @@ function fhxzck() {
 function qswcdl(timeout = 0) {
   return new Promise((resolve) => {
     let url = {
-      // url: 'https://luobook.coding.net/p/code.json/d/luobook/git/raw/master/code.json',
+      // url: 'https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/code.json',
       url:'./code.json'
       headers: ``,
     }
@@ -140,7 +141,7 @@ function qswcdl(timeout = 0) {
 
             if(elmyqm){
             if(k==0){
-              ownerId = 'bfb0188'
+              ownerId = '29HD1uJ'
             }else{
               ownerId=elmyqm
             }

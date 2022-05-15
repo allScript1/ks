@@ -42,6 +42,11 @@ qq群 681030097
 
 
 
+### 05拉库
+```
+ql repo https://github.com/allScript1/ks.git "05"
+```
+
 
 
 ### 拉库
@@ -71,3 +76,10 @@ https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/ks
 https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/ksjsbjk.json
 
 http://127.0.0.1:50600/ksjsbjk.json
+
+
+
+
+
+https://luobook.coding.net/p/code.json/d/luobook/git/raw/master/code.json
+https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/code.json
