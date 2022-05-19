@@ -1,15 +1,32 @@
 
+// /*
+// 见缝插针
+// 活动地址: 京东极速版-百元生活费-玩游戏现金可提现
+// 作者by：jiulan
+// 更新时间：2021-11-30
+// 脚本兼容: QuantumultX, Surge,Loon, JSBox, Node.js
+// =================================Quantumultx=========================
+// [task_local]
+// #见缝插针
+// 15 10 * * * https://raw.githubusercontent.com/KingRan/JDJB/main/jd_jfcz.js, tag=见缝插针, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+// =================================Loon===================================
+// [Script]
+// cron "15 10 * * *" script-path=https://raw.githubusercontent.com/KingRan/JDJB/main/jd_jfcz.js,tag=见缝插针
 
-//美团天天神卷+赚米粒
-//百度 美团登录自己抓Token ，美团小程序首页天天赚钱
-//只支持青龙
+
+
+// 美团天天神卷+赚米粒
+// 百度 美团登录自己抓Token ，美团小程序首页天天赚钱
+// 只支持青龙
 // 环境变量 mtTk （建议直接复制）
-//多账号用 @
-//如需关闭膨胀，环境变量 sjpz 值：false
-//本次更新：增加推送，可设置膨胀。
-//推送依赖 https://gitee.com/xiecoll/radish-script/raw/master/MT/sendNotify.js
+// 多账号用 @
+// 如需关闭膨胀，环境变量 sjpz 值：false
+// 本次更新：增加推送，可设置膨胀。
+// 推送依赖 https://gitee.com/xiecoll/radish-script/raw/master/MT/sendNotify.js
 
-//环境变量 meituanyq 优惠券邀请码
+// 环境变量 meituanyq 优惠券邀请码
+// *
+// /
 
 const $ = new Env('美团');
 
