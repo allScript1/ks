@@ -30,8 +30,8 @@ let num = rand(10, 99)
 let umidToken = `defaultToken1_um_not_loaded@@https://tb.ele.me/wow/alsc/mod/d5275789de46503ba0908a9d@@${Date.now()}`
 let ua = `defaultUA1_uab_not_loaded@@https://tb.ele.me/wow/alsc/mod/d5275789de46503ba0908a9d@@${Date.now()}`
 let elmyqm = $.isNode() ? (process.env.elmyqm ? process.env.elmyqm : "") : ($.getdata('elmyqm') ? $.getdata('elmyqm') : "")
-// let ownerId = '29HD1uJ'
-let ownerId = '29HD1uJ'
+// let ownerId = '2mblXnt'
+let ownerId = '2mblXnt'
 Date.prototype.Format = function (fmt) { //author: meizz
   var o = {
     "M+": this.getMonth() + 1, //月份
@@ -141,7 +141,7 @@ function qswcdl(timeout = 0) {
 
             if(elmyqm){
             if(k==0){
-              ownerId = '29HD1uJ'
+              ownerId = '2mblXnt'
             }else{
               ownerId=elmyqm
             }

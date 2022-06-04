@@ -23,6 +23,7 @@ let userList = []
 
 let userIdx = 0
 let userCount = 0
+xmydAccount='1269370161&youngshare?2'
 
 ///////////////////////////////////////////////////////////////////
 class UserInfo {
