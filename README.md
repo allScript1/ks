@@ -32,19 +32,18 @@
 
 > _**您使用或者复制了本仓库且本人制作的任何脚本，则视为`已接受`此声明，请仔细阅读**_
 
-### 为防止账号再次遭到封禁失联,可以加入QQ交流群
+
 
 qq群 681030097
 
-维护收集不易，大部分内容收集于网络，感谢GitHub提供开源学习平台
 
 
-
+# 不要fork，自己玩的，fork的请24小时内删除
 
 
 ### 05拉库
 ```
-ql repo https://github.com/allScript1/ks.git "202205"
+ql repo https://github.com/allScript1/ks.git "2022005"
 ```
 
 
@@ -83,3 +82,11 @@ http://127.0.0.1:50600/ksjsbjk.json
 
 https://luobook.coding.net/p/code.json/d/luobook/git/raw/master/code.json
 https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/code.json
+
+
+
+
+## qq群 681030097
+
+
+
