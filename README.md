@@ -43,7 +43,7 @@ qq群 681030097
 
 ### 05拉库
 ```
-ql repo https://github.com/allScript1/ks.git "2022005"
+ql repo https://github.com/allScript1/ks.git "2021005"
 ```
 
 
@@ -54,11 +54,6 @@ ql repo https://github.com/allScript1/ks.git "auto"
 ```
 
 
-### 备用
-
-```
-ql repo https://github001.zhimox42.workers.dev/https://github.com/allScript1/ks.git "auto"
-```
 
 ### 定时
 
@@ -66,6 +61,10 @@ ql repo https://github001.zhimox42.workers.dev/https://github.com/allScript1/ks.
 0 0 10,15 * * *
 ``` 
 
+### 拉库
+```
+ql repo https://github.com/allScript1/ks.git "young1"
+```
 
 
 
