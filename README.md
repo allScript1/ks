@@ -1,14 +1,5 @@
 
 
-【脚本文件免责声明】：
----脚本文件只用于兴趣交流
----脚本文件任何人不得用于商业以及非法用途
----脚本文件下载试用后24小时内自行删除
----因使用脚本文件造成使用者以及任何网站平台的一切损失皆由使用者承担
----脚本文件如有不慎被破解或修改皆有破解或修改者承担
----如不接受此条款请立即删除脚本文件
-
-
 ## 特别声明:
 
 -   本仓库发布的所有script均收集于网络，仅供个人学习，
@@ -41,18 +32,6 @@ qq群 681030097
 # 不要fork，自己玩的，fork的请24小时内删除
 
 
-### 05拉库
-```
-ql repo https://github.com/allScript1/ks.git "2021005"
-```
-
-
-
-### 拉库
-```
-ql repo https://github.com/allScript1/ks.git "auto"
-```
-
 
 
 ### 定时
@@ -63,24 +42,20 @@ ql repo https://github.com/allScript1/ks.git "auto"
 
 ### 拉库
 ```
-ql repo https://github.com/allScript1/ks.git "young1"
+ql repo https://github.com/allScript1/ks.git "young1" "test3"
 ```
 
 
 
 
 
-https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/ks.json
-https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/ksjsbjk.json
-
-http://127.0.0.1:50600/ksjsbjk.json
-
-
-
-
-
-https://luobook.coding.net/p/code.json/d/luobook/git/raw/master/code.json
-https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/code.json
+【脚本文件免责声明】：
+---脚本文件只用于兴趣交流
+---脚本文件任何人不得用于商业以及非法用途
+---脚本文件下载试用后24小时内自行删除
+---因使用脚本文件造成使用者以及任何网站平台的一切损失皆由使用者承担
+---脚本文件如有不慎被破解或修改皆有破解或修改者承担
+---如不接受此条款请立即删除脚本文件
 
 
 
@@ -88,4 +63,5 @@ https://ghproxy.com/https://raw.githubusercontent.com/allScript1/ks/main/auto/co
 ## qq群 681030097
 
 
-
+## tg:
+https://t.me/+dtwyHk-f6_1iMzk1
