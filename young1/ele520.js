@@ -4,7 +4,7 @@ APP : 饿了么
 饿了么吃货豆，需要点外卖同学的福利
 脚本说明：目前只支持部分任务，500，1000吃货豆换无门槛外卖红包
 重写：https://h5.ele.me/svip/task-list url script-request-header https://cdn.jsdelivr.net/gh/LubooC/Script@main/ELM/elmchd.js
-青龙环境变量  export elmck='.............'
+青龙环境变量  export elmCookie='.............'
 抓包 h5.ele.me 域名下的任何url 请求头中的Cookie
 获取数据 饿了么App->我的-> 赚吃货豆
 多账户 @
@@ -19,12 +19,12 @@ const $ = new Env('饿了么吃货豆');
 let status;
 const notify = $.isNode() ? require('./sendNotify') : '';
 status = (status = ($.getval("fhxzstatus") || "1")) > 1 ? `${status}` : ""; // 账号扩展字符
-let elmckArr = []
+let elmCookieArr = []
 let allMessage = '';
 let time = Math.round(Date.now() / 1000)
-let elmck = $.isNode() ? (process.env.elmck ? process.env.elmck : "") : ($.getdata('elmck') ? $.getdata('elmck') : "")
+let elmCookie = $.isNode() ? (process.env.elmCookie ? process.env.elmCookie : "") : ($.getdata('elmCookie') ? $.getdata('elmCookie') : "")
 let elmdh = ($.isNode() ? process.env.elmdh : $.getdata('elmdh')) || 'false';
-let elmcks = ""
+let elmCookies = ""
 let acceptTagCode, queryTagCode, arr = []
 let num = rand(10, 99)
 let umidToken = `defaultToken1_um_not_loaded@@https://tb.ele.me/wow/alsc/mod/d5275789de46503ba0908a9d@@${Date.now()}`
@@ -54,25 +54,25 @@ Date.prototype.Format = function (fmt) { //author: meizz
     fhxzck()
   } else {
     if (!$.isNode()) {
-      elmckArr.push($.getdata('elmck'))
+      elmCookieArr.push($.getdata('elmCookie'))
       let elmcount = ($.getval('elmcount') || '1');
       for (let i = 2; i <= elmcount; i++) {
-        elmckArr.push($.getdata(`elmck${i}`))
+        elmCookieArr.push($.getdata(`elmCookie${i}`))
       }
 
       await qswcdl()
 
     } else {
-      if (process.env.elmck && process.env.elmck.indexOf('@') > -1) {
-        elmckArr = process.env.elmck.split('@');
+      if (process.env.elmCookie && process.env.elmCookie.indexOf('@') > -1) {
+        elmCookieArr = process.env.elmCookie.split('@');
         console.log(`您选择的是用"@"隔开\n`)
 
       } else {
-        elmcks = [process.env.elmck]
+        elmCookies = [process.env.elmCookie]
       };
-      Object.keys(elmcks).forEach((item) => {
-        if (elmcks[item]) {
-          elmckArr.push(elmcks[item])
+      Object.keys(elmCookies).forEach((item) => {
+        if (elmCookies[item]) {
+          elmCookieArr.push(elmCookies[item])
         }
       })
 
@@ -90,9 +90,9 @@ Date.prototype.Format = function (fmt) { //author: meizz
 //获取cookie 
 function fhxzck() {
   if ($request.url.indexOf("svip") > -1) {
-    const elmck = $request.headers['Cookie']
-    if (elmck) $.setdata(elmck, `elmck${status}`)
-    $.log(elmck)
+    const elmCookie = $request.headers['Cookie']
+    if (elmCookie) $.setdata(elmCookie, `elmCookie${status}`)
+    $.log(elmCookie)
     $.msg($.name, "", `饿了么${status}数据获取成功`)
   }
 }
@@ -114,27 +114,27 @@ function qswcdl(timeout = 0) {
           allMessage += ``;
           allMessage += `\n脚本状态：${data.elmmsgi1}`;
 
-          console.log(`共${elmckArr.length}个账号`)
+          console.log(`共${elmCookieArr.length}个账号`)
           if (elmdh == 'true') {
             console.log(`\n当前设置兑换优惠券`)
             allMessage += `\n当前设置兑换优惠券`;
-            for (let k = 0; k < elmckArr.length; k++) {
+            for (let k = 0; k < elmCookieArr.length; k++) {
               $.message = ""
-              elmck = elmckArr[k]
+              elmCookie = elmCookieArr[k]
               $.index = k + 1;
               console.log(`\n开始【饿了么账户兑换 ${$.index}】`)
               allMessage += `\n开始【饿了么账户兑换 ${$.index}】`;
 
-              PrizeIndex(elmck);
+              PrizeIndex(elmCookie);
 
             }
           } else {
             console.log(`\n当前设置不兑换优惠券`)
             allMessage += `\n当前设置不兑换优惠券`;
           }
-          for (let k = 0; k < elmckArr.length; k++) {
+          for (let k = 0; k < elmCookieArr.length; k++) {
             $.message = ""
-            elmck = elmckArr[k]
+            elmCookie = elmCookieArr[k]
             $.index = k + 1;
             console.log(`\n开始【饿了么账户 ${$.index}】`)
             allMessage += `\n开始【饿了么账户 ${$.index}】`;
@@ -163,7 +163,7 @@ function qswcdl(timeout = 0) {
   })
 }
 
-async function PrizeIndex(elmck) {
+async function PrizeIndex(elmCookie) {
   let nowtime = new Date().Format("s.S")
   let starttime = $.isNode() ? (process.env.SM_STARTTIME ? process.env.SM_STARTTIME * 1 : 60) : ($.getdata('SM_STARTTIME') ? $.getdata('SM_STARTTIME') * 1 : 60);
 
@@ -172,17 +172,17 @@ async function PrizeIndex(elmck) {
     console.log(`\n整点兑换等待时间 ${sleeptime / 1000}`);
     await sleep(sleeptime)
   }
-  await svip_scene(elmck);
+  await svip_scene(elmCookie);
 }
 function sleep(timeout) {
   return new Promise((resolve) => setTimeout(resolve, timeout));
 }
-function svip_scene(elmck) {
+function svip_scene(elmCookie) {
   return new Promise((resolve) => {
     let url = {
       url: `https://h5.ele.me/restapi/biz.svip_scene/svip/engine/xSupply?params[]=%7B%22tagCode%22:%2243002%22,%22supplyInst%22:%2243002%7C178006%22,%22extra%22:%7B%22costFoodiePea%22:1000%7D%7D&bizCode=biz_code_main&longitude=113.38713836669${num}&latitude=22.931276321411${num}`,
       headers: {
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "h5.ele.me",
         "f-refer": "wv_h5",
         "Accept": "application/json, text/plain, */*",
@@ -226,7 +226,7 @@ function home_ch_tasklist() {
     let url = {
       url: `https://h5.ele.me/restapi/biz.growth_finetune/v1/finetune/operate?bizScenarioCode=home_ch_tasklist&longitude=113.38713836669${num}&latitude=22.931276321411${num}`,
       headers: {
-        "Cookie": elmck
+        "Cookie": elmCookie
       }
     }
     $.get(url, async (err, resp, data) => {
@@ -257,7 +257,7 @@ function gfd(actId) {
     let url = {
       url: `https://h5.ele.me/restapi/biz.svip_scene/svip/engine/queryTrafficSupply?tagParams=[{"tagCode":"347079","extra":{"solutionType":"QUERY","actId":"${actId}","sceneCode":"divide_chd_interact","client":"eleme"}}]&bizCode=biz_card_main&longitude=113.38713836669${num}&latitude=22.931276321411${num}`,
       headers: {
-        "Cookie": elmck
+        "Cookie": elmCookie
       }
     }
     $.get(url, async (err, resp, data) => {
@@ -313,7 +313,7 @@ function asac(phaseId, actId, asacid) {
     let url = {
       url: `https://h5.ele.me/restapi/biz.svip_scene/svip/engine/xSupply?asac=${asacid}`,
       headers: {
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "h5.ele.me",
         "f-refer": "wv_h5",
         "Accept": "application/json, text/plain, */*",
@@ -357,7 +357,7 @@ function xSupply(phaseId, actId, amount) {
     let url = {
       url: `https://h5.ele.me/restapi/biz.svip_scene/svip/engine/xSupply`,
       headers: {
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "h5.ele.me",
         "f-refer": "wv_h5",
         "Accept": "application/json, text/plain, */*",
@@ -404,7 +404,7 @@ function tagcode() {
     let url = {
       url: `https://h5.ele.me/restapi/biz.growth_finetune/v1/finetune/operate?bizScenarioCode=home_ch_tasklist&longitude=113.${num}&latitude=22.${num}`,
       headers: {
-        "Cookie": elmck
+        "Cookie": elmCookie
       }
     }
     $.get(url, async (err, resp, data) => {
@@ -434,7 +434,7 @@ function user() {
     let url = {
       url: `https://h5.ele.me/restapi/biz.svip_bonus/v1/users/supervip/pea/queryAccountBalance?types=[%22PEA_ACCOUNT%22]&longitude=113.${num}&latitude=22.${num}`,
       headers: {
-        "Cookie": elmck
+        "Cookie": elmCookie
       }
     }
     $.get(url, async (err, resp, data) => {
@@ -494,7 +494,7 @@ function userend() {
     let url = {
       url: `https://h5.ele.me/restapi/biz.svip_bonus/v1/users/supervip/pea/queryAccountBalance?types=[%22PEA_ACCOUNT%22]&longitude=113.${num}&latitude=22.${num}`,
       headers: {
-        "Cookie": elmck
+        "Cookie": elmCookie
       }
     }
     $.get(url, async (err, resp, data) => {
@@ -527,7 +527,7 @@ function queryCasReward() {
         "Accept": "application/json, text/plain, */*",
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "zh-cn", "Connection": "keep-alive",
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "httpizza.ele.me",
         "User-Agent": `RenderWay/H5 AppName/elmc DeviceId/2423E${num}9-E718-48E0-${num}9B-8AF98332514E AppExtraInfo/%7B%22miniWua%22%3A%22HHnB_trF4qnXd7LBb1W7aTfbQadftHWJ%2BMg4rvN%2FalAHEZTC%2BerivaAPHBKR4lQ3HSPXDH9vbyVUHKsUvvKe8yrOaRJh1q5faiUwYONdp9G7Xqh7c4OyAaTzONYqZvnlRdg98KPMpv%2Fzs8fjbJiHjWqqRyruhKfS8iHhdyQ2QkCo%2By6s%3D%22%2C%22umidToken%22%3A%22zjdL%2Fh9LOnj3PzV9ZlUgfYV2c4wnliyM%22%2C%22ttid%22%3A%22201200%40eleme_iphone_10.0.5%22%2C%22deviceUUID%22%3A%222423E699-E718-48E0-999B-8AF98332514E%22%2C%22utdid%22%3A%22YZ2hE01GigMDAEmsd67%2FkXGZ%22%7D Longitude/113.387${num}041531943 Latitude/22.931${num}970003977`,
         "x-shard": "p=1F1C104E4242405D4041414240474A4B4B434341445F41405D4245444B40454A404646464B474545"
@@ -572,7 +572,7 @@ function drawBubbleCashReward(recordNos) {
         "Accept": "application/json, text/plain, */*",
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "zh-cn", "Connection": "keep-alive",
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "httpizza.ele.me",
         "Content-Type": "application/json;charset=UTF-8",
         "User-Agent": `RenderWay/H5 AppName/elmc DeviceId/2423E${num}9-E718-48E0-${num}9B-8AF98332514E AppExtraInfo/%7B%22miniWua%22%3A%22HHnB_trF4qnXd7LBb1W7aTfbQadftHWJ%2BMg4rvN%2FalAHEZTC%2BerivaAPHBKR4lQ3HSPXDH9vbyVUHKsUvvKe8yrOaRJh1q5faiUwYONdp9G7Xqh7c4OyAaTzONYqZvnlRdg98KPMpv%2Fzs8fjbJiHjWqqRyruhKfS8iHhdyQ2QkCo%2By6s%3D%22%2C%22umidToken%22%3A%22zjdL%2Fh9LOnj3PzV9ZlUgfYV2c4wnliyM%22%2C%22ttid%22%3A%22201200%40eleme_iphone_10.0.5%22%2C%22deviceUUID%22%3A%222423E699-E718-48E0-999B-8AF98332514E%22%2C%22utdid%22%3A%22YZ2hE01GigMDAEmsd67%2FkXGZ%22%7D Longitude/113.387${num}041531943 Latitude/22.931${num}970003977`,
@@ -609,7 +609,7 @@ function accountWithdrawal(amount) {
         "Accept": "application/json, text/plain, */*",
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "zh-cn", "Connection": "keep-alive",
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "httpizza.ele.me",
         "Content-Type": "application/json;charset=UTF-8",
         "User-Agent": `RenderWay/H5 AppName/elmc DeviceId/2423E${num}9-E718-48E0-${num}9B-8AF98332514E AppExtraInfo/%7B%22miniWua%22%3A%22HHnB_trF4qnXd7LBb1W7aTfbQadftHWJ%2BMg4rvN%2FalAHEZTC%2BerivaAPHBKR4lQ3HSPXDH9vbyVUHKsUvvKe8yrOaRJh1q5faiUwYONdp9G7Xqh7c4OyAaTzONYqZvnlRdg98KPMpv%2Fzs8fjbJiHjWqqRyruhKfS8iHhdyQ2QkCo%2By6s%3D%22%2C%22umidToken%22%3A%22zjdL%2Fh9LOnj3PzV9ZlUgfYV2c4wnliyM%22%2C%22ttid%22%3A%22201200%40eleme_iphone_10.0.5%22%2C%22deviceUUID%22%3A%222423E699-E718-48E0-999B-8AF98332514E%22%2C%22utdid%22%3A%22YZ2hE01GigMDAEmsd67%2FkXGZ%22%7D Longitude/113.387${num}041531943 Latitude/22.931${num}970003977`,
@@ -646,7 +646,7 @@ function queryTaskswelfareCode() {
         "Accept": "application/json, text/plain, */*",
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "zh-cn", "Connection": "keep-alive",
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "httpizza.ele.me",
         "User-Agent": `RenderWay/H5 AppName/elmc DeviceId/2423E${num}9-E718-48E0-${num}9B-8AF98332514E AppExtraInfo/%7B%22miniWua%22%3A%22HHnB_trF4qnXd7LBb1W7aTfbQadftHWJ%2BMg4rvN%2FalAHEZTC%2BerivaAPHBKR4lQ3HSPXDH9vbyVUHKsUvvKe8yrOaRJh1q5faiUwYONdp9G7Xqh7c4OyAaTzONYqZvnlRdg98KPMpv%2Fzs8fjbJiHjWqqRyruhKfS8iHhdyQ2QkCo%2By6s%3D%22%2C%22umidToken%22%3A%22zjdL%2Fh9LOnj3PzV9ZlUgfYV2c4wnliyM%22%2C%22ttid%22%3A%22201200%40eleme_iphone_10.0.5%22%2C%22deviceUUID%22%3A%222423E699-E718-48E0-999B-8AF98332514E%22%2C%22utdid%22%3A%22YZ2hE01GigMDAEmsd67%2FkXGZ%22%7D Longitude/113.387${num}041531943 Latitude/22.931${num}970003977`,
         "x-shard": "p=1F1C104E4242405D4041414240474A4B4B434341445F41405D4245444B40454A404646464B474545"
@@ -690,7 +690,7 @@ function receiveAndFinishTask(msg, taskId, welfareCode) {
         "Accept": "application/json, text/plain, */*",
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "zh-cn", "Connection": "keep-alive",
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "httpizza.ele.me",
         "Content-Type": "application/json;charset=utf-8",
         "User-Agent": `RenderWay/H5 AppName/elmc DeviceId/2423E${num}9-E718-48E0-${num}9B-8AF98332514E AppExtraInfo/%7B%22miniWua%22%3A%22HHnB_trF4qnXd7LBb1W7aTfbQadftHWJ%2BMg4rvN%2FalAHEZTC%2BerivaAPHBKR4lQ3HSPXDH9vbyVUHKsUvvKe8yrOaRJh1q5faiUwYONdp9G7Xqh7c4OyAaTzONYqZvnlRdg98KPMpv%2Fzs8fjbJiHjWqqRyruhKfS8iHhdyQ2QkCo%2By6s%3D%22%2C%22umidToken%22%3A%22zjdL%2Fh9LOnj3PzV9ZlUgfYV2c4wnliyM%22%2C%22ttid%22%3A%22201200%40eleme_iphone_10.0.5%22%2C%22deviceUUID%22%3A%222423E699-E718-48E0-999B-8AF98332514E%22%2C%22utdid%22%3A%22YZ2hE01GigMDAEmsd67%2FkXGZ%22%7D Longitude/113.387${num}041531943 Latitude/22.931${num}970003977`,
@@ -726,7 +726,7 @@ function queryBalancess() {
         "Accept": "application/json, text/plain, */*",
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "zh-cn", "Connection": "keep-alive",
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "httpizza.ele.me",
         "User-Agent": `RenderWay/H5 AppName/elmc DeviceId/2423E${num}9-E718-48E0-${num}9B-8AF98332514E AppExtraInfo/%7B%22miniWua%22%3A%22HHnB_trF4qnXd7LBb1W7aTfbQadftHWJ%2BMg4rvN%2FalAHEZTC%2BerivaAPHBKR4lQ3HSPXDH9vbyVUHKsUvvKe8yrOaRJh1q5faiUwYONdp9G7Xqh7c4OyAaTzONYqZvnlRdg98KPMpv%2Fzs8fjbJiHjWqqRyruhKfS8iHhdyQ2QkCo%2By6s%3D%22%2C%22umidToken%22%3A%22zjdL%2Fh9LOnj3PzV9ZlUgfYV2c4wnliyM%22%2C%22ttid%22%3A%22201200%40eleme_iphone_10.0.5%22%2C%22deviceUUID%22%3A%222423E699-E718-48E0-999B-8AF98332514E%22%2C%22utdid%22%3A%22YZ2hE01GigMDAEmsd67%2FkXGZ%22%7D Longitude/113.387${num}041531943 Latitude/22.931${num}970003977`,
         "x-shard": "p=1F1C104E4242405D4041414240474A4B4B434341445F41405D4245444B40454A404646464B474545"
@@ -765,7 +765,7 @@ function queryBalance() {
         "Accept": "application/json, text/plain, */*",
         "Accept-Encoding": "gzip, deflate, br",
         "Accept-Language": "zh-cn", "Connection": "keep-alive",
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "httpizza.ele.me",
         "User-Agent": `RenderWay/H5 AppName/elmc DeviceId/2423E${num}9-E718-48E0-${num}9B-8AF98332514E AppExtraInfo/%7B%22miniWua%22%3A%22HHnB_trF4qnXd7LBb1W7aTfbQadftHWJ%2BMg4rvN%2FalAHEZTC%2BerivaAPHBKR4lQ3HSPXDH9vbyVUHKsUvvKe8yrOaRJh1q5faiUwYONdp9G7Xqh7c4OyAaTzONYqZvnlRdg98KPMpv%2Fzs8fjbJiHjWqqRyruhKfS8iHhdyQ2QkCo%2By6s%3D%22%2C%22umidToken%22%3A%22zjdL%2Fh9LOnj3PzV9ZlUgfYV2c4wnliyM%22%2C%22ttid%22%3A%22201200%40eleme_iphone_10.0.5%22%2C%22deviceUUID%22%3A%222423E699-E718-48E0-999B-8AF98332514E%22%2C%22utdid%22%3A%22YZ2hE01GigMDAEmsd67%2FkXGZ%22%7D Longitude/113.387${num}041531943 Latitude/22.931${num}970003977`,
         "x-shard": "p=1F1C104E4242405D4041414240474A4B4B434341445F41405D4245444B40454A404646464B474545"
@@ -805,7 +805,7 @@ function supportor() {
       url: `https://h5.ele.me/restapi/alpaca/v1/recommend/supportor`,
       body: `{"ownerId":"${ownerId}","fromOfficialAccount":false,"referUserId":"","restaurantId":"","referCode":"","referChannelCode":"","referChannelType":"","fromWeChatApp":false,"bizType":"1","v":"2.9","chInfo":"ch_app_chsub_Photo","actId":"1","longitude":113.${num},"latitude":22.${num}}`,
       headers: {
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "h5.ele.me",
         "f-refer": "wv_h5",
         "Accept": "application/json, text/plain, */*",
@@ -849,7 +849,7 @@ function supportoraff() {
     let url = {
       url: `https://h5.ele.me/restapi/alpaca/v1/recommend/bonus/bonusdetail`,
       headers: {
-        "Cookie": elmck,
+        "Cookie": elmCookie,
         "Host": "h5.ele.me",
         "Content-Type": "application/json; charset=utf-8",
         "Accept-Encoding": "gzip, deflate, br",
@@ -887,7 +887,7 @@ function menu() {
     let url = {
       url: `https://h5.ele.me/restapi/biz.svip_scene/svip/engine/queryTrafficSupply?tagParams[]=%7B%22tagCode%22:%22${queryTagCode}%22%7D&bizCode=biz_card_main&longitude=113.${num}&latitude=22.${num}`,
       headers: {
-        "Cookie": elmck
+        "Cookie": elmCookie
       }
     }
     $.get(url, async (err, resp, data) => {
@@ -936,7 +936,7 @@ function running(missionDefId, missionCollectionId, missionType) {
     let url = {
       url: `https://h5.ele.me/restapi/biz.svip_scene/svip/engine/xSupply?params[]=%7B%22tagCode%22:%22${acceptTagCode}%22,%22extra%22:%7B%22missionDefId%22:${missionDefId},%22missionCollectionId%22:${missionCollectionId},%22missionType%22:%22${missionType}%22%7D%7D&bizCode=biz_code_main&longitude=113.38713836669${num}&latitude=22.931276321411${num}`,
       headers: {
-        "Cookie": elmck
+        "Cookie": elmCookie
       }
     }
     $.get(url, async (err, resp, data) => {
